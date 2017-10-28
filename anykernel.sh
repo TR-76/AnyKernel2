@@ -45,6 +45,9 @@ dump_boot;
 # begin ramdisk changes
 insert_line init.qcom.rc "init.caesium.rc" after "import init.target.rc" "import /init.caesium.rc"
 
+# Delete /system fstab mount (it's mounted in the kernel now)
+remove_line fstab.qcom "/dev/block/bootdevice/by-name/system"
+
 # end ramdisk changes
 
 write_boot;
