@@ -37,7 +37,7 @@ case "$android_ver" in
   "8.0.0"|"8.1.0") compatibility_string="your version is supported!";;
 esac;
 
-ui_print "Running Android $android_ver, $compatibility_string";
+ui_print "Android $android_ver detected, $compatibility_string";
 
 ## AnyKernel install
 dump_boot;
