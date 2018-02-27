@@ -3,7 +3,7 @@
 
 ## AnyKernel setup
 properties() {
-kernel.string=Caesium by MSF Jarvis
+kernel.string=
 do.devicecheck=1
 do.modules=0
 do.cleanup=1
