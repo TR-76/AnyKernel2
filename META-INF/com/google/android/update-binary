@@ -56,14 +56,6 @@ bb=/tmp/anykernel/tools/busybox;
 chmod 755 $bb;
 $bb chmod -R 755 /tmp/anykernel/tools /tmp/anykernel/bin;
 
-ui_print "  ____    _    _____ ____ ___ _   _ __  __";
-ui_print " / ___|  / \\  | ____/ ___|_ _| | | |  \\/  |";
-ui_print "| |     / _ \\ |  _| \\___ \\| || | | | |\\/| |";
-ui_print "| |___ / ___ \\| |___ ___) | || |_| | |  | |";
-ui_print " \\____/_/   \\_\\_____|____/___|\\___/|_|  |_|";
-ui_print "";
-ui_print "";
-
 if [ -f /tmp/anykernel/banner ]; then
   while IFS='' read -r line || $bb [[ -n "$line" ]]; do
     ui_print "$line";
