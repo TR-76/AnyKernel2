@@ -11,44 +11,6 @@ write  /sys/block/sda/queue/iosched/back_seek_penalty 4
 write  /sys/block/sda/queue/iosched/low_latency 0
 write  /sys/block/sda/queue/iosched/target_latency_us 300
 
-# Setup CPU parameters
-write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 90
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 22000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 30000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 1286400
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack 80000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "85 1100000:31 1200000:65 1300000:85 1400000:93"
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 40000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost 0
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down 0
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/align_windows 0
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 100000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 80000
-write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "interactive"
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/io_is_busy 1
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/go_hispeed_load 99
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay 25000
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate 30000
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/hispeed_freq 1056000
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_slack 80000
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads "89 1200000:41 130000:50 1400000:5 1500000:90 1800000:76 1900000:93"
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time 40000
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/ignore_hispeed_on_notif 1
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/boost 0
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/fast_ramp_down 0
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/align_windows 0
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_migration_notif 1
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction 1
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_sched_load 1
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis 100000
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/boostpulse_duration 80000
-
 # Hardware keys backlight control
 on property:persist.hwkeys.backlight=enabled
     write /sys/class/leds/button-backlight/max_brightness 40
