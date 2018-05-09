@@ -30,8 +30,13 @@ ramdisk_compression=auto;
 chmod -R 750 $ramdisk/*;
 chown -R root:root $ramdisk/*;
 
-## Alert of unsupported Android version
-android_ver=$(mount /system; grep "^ro.build.version.release" /system/build.prop | cut -d= -f2; umount /system);
+## Alert of unsupported Android version and OOS plebs
+oos_ver=$(file_getprop /system/build.prop ro.build.ota.versionname)
+if [ $oos_ver != "" ]; then
+    echo "OxygenOS is NOT supported by Caesium"
+    exit 9
+fi
+android_ver=$(file_getprop /system/build.prop ro.build.version.release)
 case "$android_ver" in
   "6.0"|"6.0.1"|"7.0"|"7.1"|"7.1.1"|"7.1.2") compatibility_string="your version is unsupported, expect no support from the kernel developer!";;
   "8.0.0"|"8.1.0") compatibility_string="your version is supported!";;
