@@ -33,7 +33,7 @@ chown -R root:root $ramdisk/*;
 ## Alert of unsupported Android version and OOS plebs
 oos_ver=$(file_getprop /system/build.prop ro.build.ota.versionname)
 if [ $oos_ver != "" ]; then
-    echo "OxygenOS is NOT supported by Caesium"
+    ui_print "OxygenOS is NOT supported by Caesium"
     exit 9
 fi
 android_ver=$(file_getprop /system/build.prop ro.build.version.release)
