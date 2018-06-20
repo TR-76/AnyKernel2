@@ -2,7 +2,8 @@
 # osm0sis @ xda-developers
 
 ## AnyKernel setup
-properties() {
+# begin properties
+properties() { '
 kernel.string=
 do.devicecheck=1
 do.modules=0
@@ -13,7 +14,7 @@ device.name2=oneplus3t
 device.name3=OnePlus3
 device.name4=oneplus3
 device.name5=
-} # end properties
+'; } # end properties
 
 # shell variables
 block=/dev/block/bootdevice/by-name/boot;
