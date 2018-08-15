@@ -41,7 +41,7 @@ fi
 android_ver=$(file_getprop /system/build.prop ro.build.version.release)
 case "$android_ver" in
   "6.0"|"6.0.1"|"7.0"|"7.1"|"7.1.1"|"7.1.2") compatibility_string="your version is unsupported, expect no support from the kernel developer!";;
-  "8.0.0"|"8.1.0") compatibility_string="your version is supported!";;
+  "8.0.0"|"8.1.0"|"9") compatibility_string="your version is supported!";;
 esac;
 
 ui_print "Android $android_ver detected, $compatibility_string";
