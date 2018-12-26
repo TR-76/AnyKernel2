@@ -14,6 +14,7 @@ device.name2=oneplus3t
 device.name3=OnePlus3
 device.name4=oneplus3
 device.name5=
+supported.versions=
 '; } # end properties
 
 # shell variables
@@ -29,7 +30,6 @@ ramdisk_compression=auto;
 ## AnyKernel file attributes
 # set permissions/ownership for included ramdisk files
 chmod -R 750 $ramdisk/*;
-chmod -R 755 $ramdisk/sbin;
 chown -R root:root $ramdisk/*;
 
 ## Alert of unsupported Android version and OOS plebs
